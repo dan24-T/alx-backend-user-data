@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Personal data
+Personal data use data
 """
 
 
@@ -23,7 +23,7 @@ def filter_datum(fields: List[str], redaction: str, message: str,
 
 
 class RedactingFormatter(logging.Formatter):
-    """ RedactingFormatter class. """
+    """ RedactingFormatter"""
 
     REDACTION = "***"
     FORMAT = "[HOLBERTON] %(name)s %(levelname)s %(asctime)-15s: %(message)s"
@@ -41,7 +41,7 @@ class RedactingFormatter(logging.Formatter):
 
 
 def get_logger() -> logging.Logger:
-    """ Implementing a logger.
+    """ logger.
     """
 
     logger = logging.getLogger("user_data")
@@ -54,7 +54,7 @@ def get_logger() -> logging.Logger:
 
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
-    """ Implement db conectivity
+    """ db conectivity
     """
     psw = os.environ.get("PERSONAL_DATA_DB_PASSWORD", "")
     username = os.environ.get('PERSONAL_DATA_DB_USERNAME', "root")
@@ -69,7 +69,7 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
 
 
 def main() -> None:
-    """ Implement a main function
+    """ main function
     """
     db = get_db()
     cursor = db.cursor()
