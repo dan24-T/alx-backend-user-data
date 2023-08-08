@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Route module for the API
+Route module API
 """
 from os import getenv
 from api.v1.views import app_views
@@ -32,7 +32,7 @@ def not_found(error) -> str:
 @app.errorhandler(401)
 def unauthorized(error) -> str:
     """
-    Unauthorized handler.
+    Unauthorized.
     """
     return jsonify({"error": "Unauthorized"}), 401
 
@@ -40,7 +40,7 @@ def unauthorized(error) -> str:
 @app.errorhandler(403)
 def unauthorized(error) -> str:
     """
-    Forbidden handler.
+    Forbidden.
     """
     return jsonify({"error": "Forbidden"}), 403
 
@@ -48,7 +48,7 @@ def unauthorized(error) -> str:
 @app.before_request
 def before_request():
     """
-    handler before_request
+    before_request
     """
     authorized_list = ['/api/v1/status/',
                        '/api/v1/unauthorized/', '/api/v1/forbidden/']
